@@ -1,19 +1,19 @@
 # CodeRunner
 
 ## Introducció
-Aquesta documentació correspon a la configuració del plugin CodeRunner[https://moodle.org/plugins/qtype_coderunner] destinat el LMS Moodle i desenvolupat per Richard Lobb, professor de la Universitat de Canterbury de Nova Zelanda[https://coderunner.org.nz/].
+Aquesta documentació correspon a la configuració del [plugin CodeRunner](https://moodle.org/plugins/qtype_coderunner)destinat el LMS Moodle i desenvolupat per [Richard Lobb]([https://coderunner.org.nz/), professor de la Universitat de Canterbury de Nova Zelanda.
 Aquest plugin permet crear un tipus de pregunta dins els qüestionaris de Moodle que l'estudiant pot respondre mitjançant codi i que s'autocorregeixen mitjançant la seva execució en un Sandbox. Això permet al professor preparar preguntes autocorregibles per l'estudiant i aquest pugui practicar de manera autònoma.
 
 La configuració aquí explicada correspon a un escenari d'autocrrecció d'exercicis SQL mitjançant el SGBDR MySQL. Concretament la versió 8.0
 
 Recursos:
-- Pàgina oficial (CodeRunner)[https://coderunner.org.nz/]
-- (YouTube CodeRunner)[https://www.youtube.com/channel/UCDRXp0D9QLBJWxkzjcHTJgA]
+- Pàgina oficial [CodeRunner](https://coderunner.org.nz/)
+- [YouTube CodeRunner](https://www.youtube.com/channel/UCDRXp0D9QLBJWxkzjcHTJgA)
 
 ## Infraestructura
 
 La infraestructura de com està muntada aquest configuració és la mostrada a la imatge.
-Tenim dues màquines. En una hi tenim el Moodle i a l'altre i tenim el servei de Docker amb dos contenidor. Un el JobeServer de CodeRunner [https://hub.docker.com/r/trampgeek/jobeinabox/] i l'altre el MySQL, concretament el Percona Server 8.0 (https://hub.docker.com/_/percona)
+Tenim dues màquines. En una hi tenim el Moodle i a l'altre i tenim el servei de Docker amb dos contenidor. Un el [JobeServer de CodeRunner](https://hub.docker.com/r/trampgeek/jobeinabox/) i l'altre el MySQL, concretament el [Percona Server 8.0] (https://hub.docker.com/_/percona)
 ![Infrestructura/escenari](img/infrestructura.png)
 
 El fet de tenir el JobeServer i el PerconaServer dins de contenidors és una opció personal, però es podrien tenir en màquines diferents.
@@ -62,7 +62,7 @@ Exemple:
 
 En aquest apartat, concretament en el paràmetre **Template** hi haurà el codi que s'executarà per comprovar la resposta de l'alumne. En aquest cas el codi està fet en Python.
 
-(Codi font complet)[src-template-mysql80_select-questiontype.py]
+[Codi font complet](src-template-mysql80_select-questiontype.py)
 
 L'estructura del codi és molt simple i millorable.
 
@@ -98,22 +98,4 @@ En aquest cas els paràmetres que s'han modificat són el *mysqldb*
 En l'apartat dels paràmetres generals és a on es col·loca l'enunciat de la pregunta i la solució.
 
 ![Paràmetres GeneralsSection](img/mysql-80-example-question-parametres-generals-section.jpg)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
