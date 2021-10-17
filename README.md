@@ -1,19 +1,19 @@
 # CodeRunner
 
 ## Introducció
-Aquesta documentació correspon a la configuració del [plugin CodeRunner](https://moodle.org/plugins/qtype_coderunner)destinat el LMS Moodle i desenvolupat per [Richard Lobb]([https://coderunner.org.nz/), professor de la Universitat de Canterbury de Nova Zelanda.
+Aquesta documentació correspon a la configuració del [plugin CodeRunner](https://moodle.org/plugins/qtype_coderunner) destinat el LMS Moodle i desenvolupat per [Richard Lobb]([https://coderunner.org.nz/), professor de la Universitat de Canterbury de Nova Zelanda.
 Aquest plugin permet crear un tipus de pregunta dins els qüestionaris de Moodle que l'estudiant pot respondre mitjançant codi i que s'autocorregeixen mitjançant la seva execució en un Sandbox. Això permet al professor preparar preguntes autocorregibles per l'estudiant i aquest pugui practicar de manera autònoma.
 
 La configuració aquí explicada correspon a un escenari d'autocrrecció d'exercicis SQL mitjançant el SGBDR MySQL. Concretament la versió 8.0
 
 Recursos:
-- Pàgina oficial [CodeRunner](https://coderunner.org.nz/)
+- [Pàgina oficial CodeRunner](https://coderunner.org.nz/)
 - [YouTube CodeRunner](https://www.youtube.com/channel/UCDRXp0D9QLBJWxkzjcHTJgA)
 
 ## Infraestructura
 
 La infraestructura de com està muntada aquest configuració és la mostrada a la imatge.
-Tenim dues màquines. En una hi tenim el Moodle i a l'altre i tenim el servei de Docker amb dos contenidor. Un el [JobeServer de CodeRunner](https://hub.docker.com/r/trampgeek/jobeinabox/) i l'altre el MySQL, concretament el [Percona Server 8.0] (https://hub.docker.com/_/percona)
+Tenim dues màquines. En una hi tenim el Moodle i a l'altre i tenim el servei de Docker amb dos contenidor. Un el [JobeServer de CodeRunner](https://hub.docker.com/r/trampgeek/jobeinabox/) i l'altre el MySQL, concretament el [Percona Server 8.0](https://hub.docker.com/_/percona)
 ![Infrestructura/escenari](img/infrestructura.png)
 
 El fet de tenir el JobeServer i el PerconaServer dins de contenidors és una opció personal, però es podrien tenir en màquines diferents.
@@ -25,8 +25,8 @@ S'ha creat una *CodeRunner Question Type* personalitzada (custom) com a plantill
 A l'apartat *Advanced customisation* definim que és una pregunta de tipus plantilla, li donem un nom al tipus de pregunta i indiquem que el llenguatge amb el qual s'executarà serà python3 i que el llenguatge que ha d'interpretar la caixa de text a on l'alumne respondrà serà SQL.
 ![Advanced customisation section](img/mysql-80-prototype-config-advanced-customisation.png)
 
-## Apartat Parèmtres generals
-Els parèmtres generals els aprofitem per posar nom a la pregunta. En aquest cas posem: "PROTOTYPE_MYSQL80_SELECT". Posem el prefix PROTOTYPE per indicar/identificar que aquesta pregunta no es pot utilitzar en dins d'un qüestionari i que és especial quan es visualitza dins del banc de preguntes.
+## Apartat Paràmetres generals
+Els paràmetres generals els aprofitem per posar nom a la pregunta. En aquest cas posem: **"PROTOTYPE_MYSQL80_SELECT"**. Posem el prefix PROTOTYPE per indicar/identificar que aquesta pregunta no es pot utilitzar en dins d'un qüestionari i que és especial quan es visualitza dins del banc de preguntes.
 
 En el camp **Text de la pregunta** hi ha tota la informació de pràmetres que podem utilitzar en les preguntes que derivin de la plantilla. És una mena de documentació interna.
 
@@ -43,7 +43,7 @@ Paràmetre checks: array a on hi haurà quines comprovacions/CHECK's s'hauran de
 - CHECK_ORDER_NAME_FIELDS (no implementat): Comprova l'ordre dels camps retornats
 - CHECK_EFFICIENCY(no implementat): Comprova l'eficiència mitjançant EXPLAIN
 
-Altres parèmtres:
+Altres paràmetres:
 - percent_checks: (0.25) Valor que tindran els checks respecte el total de la pregunta. Ja que en principi hi ha un check automàtic que és comprovar el resultat de la sentència SELECT. Aquest percentatge es repartirà de manera equitativa dels diferents checks que hi hagi al paràmetre checks
 - show_checks:  (true/false): Mostra a l'usuari el resultat de cada check.
 
