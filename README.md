@@ -23,7 +23,7 @@ El fet de tenir el JobeServer i el PerconaServer dins de contenidors és una opc
 S'ha creat una *CodeRunner Question Type* personalitzada (custom) com a plantilla anomenada **mysql80_select** per tal de que totes les preguntes de tipus CodeRunner que vulguem que utilitzin el SGBDR Persona Server 8.0 heredin d'aquesta pregunta.
 
 A l'apartat *Advanced customisation* definim que és una pregunta de tipus plantilla, li donem un nom al tipus de pregunta i indiquem que el llenguatge amb el qual s'executarà serà python3 i que el llenguatge que ha d'interpretar la caixa de text a on l'alumne respondrà serà SQL.
-![Advanced customisation section](img/mysql-80-prototype-config-advanced-customisation.png)
+![Advanced customisation section](img/mysql-80-prototype-config-advanced-customisation.jpg)
 
 ## Apartat Paràmetres generals
 Els paràmetres generals els aprofitem per posar nom a la pregunta. En aquest cas posem: **"PROTOTYPE_MYSQL80_SELECT"**. Posem el prefix PROTOTYPE per indicar/identificar que aquesta pregunta no es pot utilitzar en dins d'un qüestionari i que és especial quan es visualitza dins del banc de preguntes.
@@ -86,7 +86,7 @@ Executem la sentència de l'estudiant
 Comencem a realitzar les comprovacions segons el paràmetre checks (QUESTION.parametres.checks)
 
 
-![Customisation section](img/mysql-80-prototype-config-customisation.png)
+![Customisation section](img/mysql-80-prototype-config-customisation.jpg)
 
 
 ## Exemple d'una pregunta
